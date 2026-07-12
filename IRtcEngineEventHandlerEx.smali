@@ -1,0 +1,35 @@
+# classes13.dex
+
+.class public abstract Lio/agora/rtc/IRtcEngineEventHandlerEx;
+.super Lio/agora/rtc/IRtcEngineEventHandler;
+.source "SourceFile"
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 1
+
+    invoke-direct {p0}, Lio/agora/rtc/IRtcEngineEventHandler;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onAudioTransportQuality(IISS)V
+    .registers 5
+
+    return-void
+.end method
+
+.method public onRecap([B)V
+    .registers 2
+
+    return-void
+.end method
+
+.method public onVideoTransportQuality(IISS)V
+    .registers 5
+
+    return-void
+.end method
