@@ -1,16 +1,16 @@
 # classes13.dex
 
-.class Lio/agora/rtc/gl/SurfaceTextureHelper$4;
+.class Lio/agora/rtc/mediaio/SurfaceTextureHelper$4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lio/agora/rtc/gl/SurfaceTextureHelper;->stopListening()V
+    value = Lio/agora/rtc/mediaio/SurfaceTextureHelper;-><init>(Lio/agora/rtc/gl/EglBase$Context;Landroid/os/Handler;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,14 +20,14 @@
 
 
 # instance fields
-.field public final synthetic this$0:Lio/agora/rtc/gl/SurfaceTextureHelper;
+.field public final synthetic this$0:Lio/agora/rtc/mediaio/SurfaceTextureHelper;
 
 
 # direct methods
-.method public constructor <init>(Lio/agora/rtc/gl/SurfaceTextureHelper;)V
+.method public constructor <init>(Lio/agora/rtc/mediaio/SurfaceTextureHelper;)V
     .registers 2
 
-    iput-object p1, p0, Lio/agora/rtc/gl/SurfaceTextureHelper$4;->this$0:Lio/agora/rtc/gl/SurfaceTextureHelper;
+    iput-object p1, p0, Lio/agora/rtc/mediaio/SurfaceTextureHelper$4;->this$0:Lio/agora/rtc/mediaio/SurfaceTextureHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,20 +36,20 @@
 
 
 # virtual methods
-.method public run()V
+.method public onFrameAvailable(Landroid/graphics/SurfaceTexture;)V
     .registers 3
 
     .line 1
-    iget-object v0, p0, Lio/agora/rtc/gl/SurfaceTextureHelper$4;->this$0:Lio/agora/rtc/gl/SurfaceTextureHelper;
+    iget-object p1, p0, Lio/agora/rtc/mediaio/SurfaceTextureHelper$4;->this$0:Lio/agora/rtc/mediaio/SurfaceTextureHelper;
 
-    const/4 v1, 0x0
+    const/4 v0, 0x1
 
-    invoke-static {v0, v1}, Lio/agora/rtc/gl/SurfaceTextureHelper;->access$202(Lio/agora/rtc/gl/SurfaceTextureHelper;Lio/agora/rtc/gl/SurfaceTextureHelper$OnTextureFrameAvailableListener;)Lio/agora/rtc/gl/SurfaceTextureHelper$OnTextureFrameAvailableListener;
+    invoke-static {p1, v0}, Lio/agora/rtc/mediaio/SurfaceTextureHelper;->access$402(Lio/agora/rtc/mediaio/SurfaceTextureHelper;Z)Z
 
     .line 2
-    iget-object v0, p0, Lio/agora/rtc/gl/SurfaceTextureHelper$4;->this$0:Lio/agora/rtc/gl/SurfaceTextureHelper;
+    iget-object p1, p0, Lio/agora/rtc/mediaio/SurfaceTextureHelper$4;->this$0:Lio/agora/rtc/mediaio/SurfaceTextureHelper;
 
-    invoke-static {v0, v1}, Lio/agora/rtc/gl/SurfaceTextureHelper;->access$102(Lio/agora/rtc/gl/SurfaceTextureHelper;Lio/agora/rtc/gl/SurfaceTextureHelper$OnTextureFrameAvailableListener;)Lio/agora/rtc/gl/SurfaceTextureHelper$OnTextureFrameAvailableListener;
+    invoke-static {p1}, Lio/agora/rtc/mediaio/SurfaceTextureHelper;->access$600(Lio/agora/rtc/mediaio/SurfaceTextureHelper;)V
 
     return-void
 .end method

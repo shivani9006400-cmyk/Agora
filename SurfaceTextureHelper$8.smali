@@ -1,16 +1,16 @@
 # classes13.dex
 
-.class Lio/agora/rtc/gl/SurfaceTextureHelper$8;
+.class Lio/agora/rtc/mediaio/SurfaceTextureHelper$8;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/concurrent/Callable;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lio/agora/rtc/gl/SurfaceTextureHelper;->textureCopy(Lio/agora/rtc/gl/VideoFrame$TextureBuffer;)Lio/agora/rtc/gl/VideoFrame$TextureBuffer;
+    value = Lio/agora/rtc/mediaio/SurfaceTextureHelper;->dispose()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,29 +18,16 @@
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/concurrent/Callable<",
-        "Lio/agora/rtc/gl/VideoFrame$TextureBuffer;",
-        ">;"
-    }
-.end annotation
-
 
 # instance fields
-.field public final synthetic this$0:Lio/agora/rtc/gl/SurfaceTextureHelper;
-
-.field public final synthetic val$textureBuffer:Lio/agora/rtc/gl/VideoFrame$TextureBuffer;
+.field public final synthetic this$0:Lio/agora/rtc/mediaio/SurfaceTextureHelper;
 
 
 # direct methods
-.method public constructor <init>(Lio/agora/rtc/gl/SurfaceTextureHelper;Lio/agora/rtc/gl/VideoFrame$TextureBuffer;)V
-    .registers 3
+.method public constructor <init>(Lio/agora/rtc/mediaio/SurfaceTextureHelper;)V
+    .registers 2
 
-    iput-object p1, p0, Lio/agora/rtc/gl/SurfaceTextureHelper$8;->this$0:Lio/agora/rtc/gl/SurfaceTextureHelper;
-
-    iput-object p2, p0, Lio/agora/rtc/gl/SurfaceTextureHelper$8;->val$textureBuffer:Lio/agora/rtc/gl/VideoFrame$TextureBuffer;
+    iput-object p1, p0, Lio/agora/rtc/mediaio/SurfaceTextureHelper$8;->this$0:Lio/agora/rtc/mediaio/SurfaceTextureHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -49,41 +36,30 @@
 
 
 # virtual methods
-.method public call()Lio/agora/rtc/gl/VideoFrame$TextureBuffer;
-    .registers 4
-
-    .line 2
-    iget-object v0, p0, Lio/agora/rtc/gl/SurfaceTextureHelper$8;->this$0:Lio/agora/rtc/gl/SurfaceTextureHelper;
-
-    invoke-static {v0}, Lio/agora/rtc/gl/SurfaceTextureHelper;->access$800(Lio/agora/rtc/gl/SurfaceTextureHelper;)Lio/agora/rtc/gl/TextureBufferPool;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lio/agora/rtc/gl/SurfaceTextureHelper$8;->val$textureBuffer:Lio/agora/rtc/gl/VideoFrame$TextureBuffer;
-
-    new-instance v2, Lio/agora/rtc/gl/SurfaceTextureHelper$8$1;
-
-    invoke-direct {v2, p0}, Lio/agora/rtc/gl/SurfaceTextureHelper$8$1;-><init>(Lio/agora/rtc/gl/SurfaceTextureHelper$8;)V
-
-    invoke-virtual {v0, v1, v2}, Lio/agora/rtc/gl/TextureBufferPool;->textureCopy(Lio/agora/rtc/gl/VideoFrame$TextureBuffer;Ljava/lang/Runnable;)Lio/agora/rtc/gl/VideoFrame$TextureBuffer;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public bridge synthetic call()Ljava/lang/Object;
-    .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/Exception;
-        }
-    .end annotation
+.method public run()V
+    .registers 3
 
     .line 1
-    invoke-virtual {p0}, Lio/agora/rtc/gl/SurfaceTextureHelper$8;->call()Lio/agora/rtc/gl/VideoFrame$TextureBuffer;
+    iget-object v0, p0, Lio/agora/rtc/mediaio/SurfaceTextureHelper$8;->this$0:Lio/agora/rtc/mediaio/SurfaceTextureHelper;
 
-    move-result-object v0
+    const/4 v1, 0x1
 
-    return-object v0
+    invoke-static {v0, v1}, Lio/agora/rtc/mediaio/SurfaceTextureHelper;->access$802(Lio/agora/rtc/mediaio/SurfaceTextureHelper;Z)Z
+
+    .line 2
+    iget-object v0, p0, Lio/agora/rtc/mediaio/SurfaceTextureHelper$8;->this$0:Lio/agora/rtc/mediaio/SurfaceTextureHelper;
+
+    invoke-static {v0}, Lio/agora/rtc/mediaio/SurfaceTextureHelper;->access$700(Lio/agora/rtc/mediaio/SurfaceTextureHelper;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_13
+
+    .line 3
+    iget-object v0, p0, Lio/agora/rtc/mediaio/SurfaceTextureHelper$8;->this$0:Lio/agora/rtc/mediaio/SurfaceTextureHelper;
+
+    invoke-static {v0}, Lio/agora/rtc/mediaio/SurfaceTextureHelper;->access$900(Lio/agora/rtc/mediaio/SurfaceTextureHelper;)V
+
+    :cond_13
+    return-void
 .end method

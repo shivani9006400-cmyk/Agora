@@ -1,6 +1,6 @@
 # classes13.dex
 
-.class Lio/agora/rtc/gl/SurfaceTextureHelper$7;
+.class Lio/agora/rtc/mediaio/SurfaceTextureHelper$7;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
@@ -10,7 +10,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lio/agora/rtc/gl/SurfaceTextureHelper;->textureToYuv(Lio/agora/rtc/gl/VideoFrame$TextureBuffer;)Lio/agora/rtc/gl/VideoFrame$I420Buffer;
+    value = Lio/agora/rtc/mediaio/SurfaceTextureHelper;->returnTextureFrame()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,22 +20,14 @@
 
 
 # instance fields
-.field public final synthetic this$0:Lio/agora/rtc/gl/SurfaceTextureHelper;
-
-.field public final synthetic val$result:[Lio/agora/rtc/gl/VideoFrame$I420Buffer;
-
-.field public final synthetic val$textureBuffer:Lio/agora/rtc/gl/VideoFrame$TextureBuffer;
+.field public final synthetic this$0:Lio/agora/rtc/mediaio/SurfaceTextureHelper;
 
 
 # direct methods
-.method public constructor <init>(Lio/agora/rtc/gl/SurfaceTextureHelper;[Lio/agora/rtc/gl/VideoFrame$I420Buffer;Lio/agora/rtc/gl/VideoFrame$TextureBuffer;)V
-    .registers 4
+.method public constructor <init>(Lio/agora/rtc/mediaio/SurfaceTextureHelper;)V
+    .registers 2
 
-    iput-object p1, p0, Lio/agora/rtc/gl/SurfaceTextureHelper$7;->this$0:Lio/agora/rtc/gl/SurfaceTextureHelper;
-
-    iput-object p2, p0, Lio/agora/rtc/gl/SurfaceTextureHelper$7;->val$result:[Lio/agora/rtc/gl/VideoFrame$I420Buffer;
-
-    iput-object p3, p0, Lio/agora/rtc/gl/SurfaceTextureHelper$7;->val$textureBuffer:Lio/agora/rtc/gl/VideoFrame$TextureBuffer;
+    iput-object p1, p0, Lio/agora/rtc/mediaio/SurfaceTextureHelper$7;->this$0:Lio/agora/rtc/mediaio/SurfaceTextureHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -45,25 +37,37 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .registers 3
 
-    iget-object v0, p0, Lio/agora/rtc/gl/SurfaceTextureHelper$7;->val$result:[Lio/agora/rtc/gl/VideoFrame$I420Buffer;
+    .line 1
+    iget-object v0, p0, Lio/agora/rtc/mediaio/SurfaceTextureHelper$7;->this$0:Lio/agora/rtc/mediaio/SurfaceTextureHelper;
 
-    iget-object v1, p0, Lio/agora/rtc/gl/SurfaceTextureHelper$7;->this$0:Lio/agora/rtc/gl/SurfaceTextureHelper;
+    const/4 v1, 0x0
 
-    invoke-static {v1}, Lio/agora/rtc/gl/SurfaceTextureHelper;->access$1100(Lio/agora/rtc/gl/SurfaceTextureHelper;)Lio/agora/rtc/gl/YuvConverter;
+    invoke-static {v0, v1}, Lio/agora/rtc/mediaio/SurfaceTextureHelper;->access$702(Lio/agora/rtc/mediaio/SurfaceTextureHelper;Z)Z
 
-    move-result-object v1
+    .line 2
+    iget-object v0, p0, Lio/agora/rtc/mediaio/SurfaceTextureHelper$7;->this$0:Lio/agora/rtc/mediaio/SurfaceTextureHelper;
 
-    iget-object v2, p0, Lio/agora/rtc/gl/SurfaceTextureHelper$7;->val$textureBuffer:Lio/agora/rtc/gl/VideoFrame$TextureBuffer;
+    invoke-static {v0}, Lio/agora/rtc/mediaio/SurfaceTextureHelper;->access$800(Lio/agora/rtc/mediaio/SurfaceTextureHelper;)Z
 
-    invoke-virtual {v1, v2}, Lio/agora/rtc/gl/YuvConverter;->convert(Lio/agora/rtc/gl/VideoFrame$TextureBuffer;)Lio/agora/rtc/gl/VideoFrame$I420Buffer;
+    move-result v0
 
-    move-result-object v1
+    if-eqz v0, :cond_14
 
-    const/4 v2, 0x0
+    .line 3
+    iget-object v0, p0, Lio/agora/rtc/mediaio/SurfaceTextureHelper$7;->this$0:Lio/agora/rtc/mediaio/SurfaceTextureHelper;
 
-    aput-object v1, v0, v2
+    invoke-static {v0}, Lio/agora/rtc/mediaio/SurfaceTextureHelper;->access$900(Lio/agora/rtc/mediaio/SurfaceTextureHelper;)V
 
+    goto :goto_19
+
+    .line 4
+    :cond_14
+    iget-object v0, p0, Lio/agora/rtc/mediaio/SurfaceTextureHelper$7;->this$0:Lio/agora/rtc/mediaio/SurfaceTextureHelper;
+
+    invoke-static {v0}, Lio/agora/rtc/mediaio/SurfaceTextureHelper;->access$600(Lio/agora/rtc/mediaio/SurfaceTextureHelper;)V
+
+    :goto_19
     return-void
 .end method
